@@ -5,7 +5,8 @@ import Particles from './components/Particles'
 import Nav from './components/nav/Nav'
 import Home from './components/pages/Home'
 import About from './components/pages/About'
-import Contact from './components/pages/Contact'
+import Contact from './components/pages/contact/Contact'
+
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
           </div>
 
         </div>
-
+ SocialIcons
       </div>
 
     </>

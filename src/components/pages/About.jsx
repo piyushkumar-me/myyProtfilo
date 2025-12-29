@@ -5,6 +5,14 @@ import BlurText from '../BlurText'
 import TiltedCard from '../TiltedCard'
 import StarBorder from '../StarBorder';
 import { Link } from "react-router-dom";
+import SocialIcons from '../SocialIcons'
+import {
+    Github,
+    Linkedin,
+    Mail,
+    Instagram,
+    Twitter
+} from "lucide-react";
 
 function About() {
     const skills = [
@@ -16,6 +24,34 @@ function About() {
         "SQL Server",
         "Bootstrap",
         "Git & GitHub",
+    ];
+
+     const items = [
+        {
+            icon: <Github size={18} />,
+            label: "GitHub",
+            onClick: () => window.open("https://github.com/yourusername", "_blank"),
+        },
+        {
+            icon: <Linkedin size={18} />,
+            label: "LinkedIn",
+            onClick: () => window.open("https://linkedin.com/in/yourusername", "_blank"),
+        },
+        {
+            icon: <Instagram size={18} />,
+            label: "Instagram",
+            onClick: () => window.open("https://instagram.com/yourusername", "_blank"),
+        },
+        {
+            icon: <Twitter size={18} />,
+            label: "Twitter",
+            onClick: () => window.open("https://twitter.com/yourusername", "_blank"),
+        },
+        {
+            icon: <Mail size={18} />,
+            label: "Email",
+            onClick: () => (window.location.href = "mailto:you@email.com"),
+        },
     ];
     return (
         <div className="w-full h-[calc(100vh-4rem)] text-white   px-4">
@@ -33,9 +69,9 @@ function About() {
                         altText="Kendrick Lamar - GNX Album Cover"
                         captionText="Piyush Kumar"
                         containerHeight="250px"
-                        containerWidth="250px"
+                        containerWidth="200px"
                         imageHeight="250px"
-                        imageWidth="250px"
+                        imageWidth="200px"
                         rotateAmplitude={12}
                         scaleOnHover={1.2}
                         showMobileWarning={false}
@@ -78,7 +114,7 @@ function About() {
                     </div>
                 </div>
 
-                {/* ================= RIGHT COLUMN ================= */}
+               
 
                 {/* ================= RIGHT COLUMN ================= */}
                 <div className="relative w-full md:w-2/3 pr-4
@@ -86,8 +122,7 @@ function About() {
                 overflow-y-auto overflow-x-hidden">
 
 
-                    {/* 🌱 Static Tree Line */}
-                    <div className="absolute left-3 top-0 h-full w-px bg-white/30"></div>
+                    
 
                     <div className="space-y-14 pl-10">
 
@@ -150,9 +185,23 @@ function About() {
                             />
 
                             <p className="text-sm sm:text-base leading-relaxed text-white/80">
-                              ->  Internship at <b>TechWithMD</b> and creator of <b>SmarStudies</b>,
+                              Internship at <b>TechWithMD</b> and creator of <b>SmarStudies</b>,
                                 a platform for diploma students to share notes securely.
                             </p>
+                        </div>
+
+                        <div className="relative text-white">
+                            <span className="absolute -left-7 top-2 w-3 h-3 rounded-full 
+        bg-white shadow-[0_0_12px_white]">
+                            </span>
+
+                            <BlurText
+                                text="Social Media"
+                                animateBy="letter"
+                                className="text-2xl sm:text-3xl font-bold mb-3"
+                            />
+
+                             <SocialIcons items={items} />
                         </div>
 
                     </div>
