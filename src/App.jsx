@@ -6,6 +6,7 @@ import Nav from './components/nav/Nav'
 import Home from './components/pages/Home'
 import About from './components/pages/About'
 import Contact from './components/pages/contact/Contact'
+import Project from './components/pages/projects/Project'
 
 
 
@@ -37,12 +38,14 @@ function App() {
           <div className="absolute inset-0 z-10 pt-16">
 
               {/* <Home/> */}
-            <About />
-            {/* <Contact/> */}
+              {/* <About /> */}
+              {/* <Contact/> */}
+               <Project/> 
+             
           </div>
 
         </div>
- SocialIcons
+ 
       </div>
 
     </>
