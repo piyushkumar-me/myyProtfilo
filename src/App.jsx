@@ -38,9 +38,9 @@ function App() {
           <div className="absolute inset-0 z-10 pt-16">
 
               {/* <Home/> */}
-              {/* <About /> */}
+              <About />
               {/* <Contact/> */}
-               <Project/> 
+               {/* <Project/>  */}
              
           </div>
 

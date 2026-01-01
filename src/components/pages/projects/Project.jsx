@@ -71,6 +71,7 @@ export default function Projects() {
     w-full
     min-h-screen
     flex
+    
     overflow-x-hidden
     text-white
     px-4 sm:px-6
@@ -84,6 +85,7 @@ export default function Projects() {
       mx-auto
       w-full
       flex
+         justify-around
       flex-col
       md:flex-row
       gap-10
@@ -145,7 +147,7 @@ export default function Projects() {
                                     <div
                                         className="
                   w-full
-                  min-h-[300px]
+                  min-h-[350px]
                   md:h-[350px]
                   rounded-xl
                   bg-white/5
