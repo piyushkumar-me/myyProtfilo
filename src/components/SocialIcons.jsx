@@ -1,6 +1,41 @@
 import React from "react";
+import {
+    Github,
+    Linkedin,
+    Mail,
+    Instagram,
+    Twitter
+} from "lucide-react";
 
-const SocialIcons = ({ items }) => {
+const SocialIcons = () => {
+
+   const items = [
+        {
+            icon: <Github size={18} />,
+            label: "GitHub",
+            onClick: () => window.open("https://github.com/heypiyushhh", "_blank"),
+        },
+        {
+            icon: <Linkedin size={18} />,
+            label: "LinkedIn",
+            onClick: () => window.open("https://linkedin.com/in/heypiyushhh", "_blank"),
+        },
+        {
+            icon: <Instagram size={18} />,
+            label: "Instagram",
+            onClick: () => window.open("https://instagram.com/___piyu.shhh__", "_blank"),
+        },
+        {
+            icon: <Twitter size={18} />,
+            label: "Twitter",
+            onClick: () => window.open("https://x.com/HeyPiyushhh", "_blank"),
+        },
+        {
+            icon: <Mail size={18} />,
+            label: "Email",
+            onClick: () => (window.location.href = "mailto:piyushmalwa456@email.com"),
+        },
+    ];
   return (
     <div className="flex gap-3 items-center">
       {items.map((item, index) => (

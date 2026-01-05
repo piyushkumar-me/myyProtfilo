@@ -1,17 +1,17 @@
 import React from 'react'
-import TextType from '../TextType'
+import TextType from '../../TextType'
 import { Link } from "react-router-dom";
 
 
 
-import StarBorder from '../StarBorder';
+import StarBorder from '../../StarBorder';
 
 function Home() {
     return (
-        <section className="w-full h-screen flex flex-col items-center justify-center text-center px-4">
+        <section className="w-full h-screen flex flex-col items-center justify-center text-center  gap-3 px-4">
 
             {/* 🔥 Main Heading with Type Effect */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold  text-white">
                 <TextType
                     text={[
                         "Hi, I'm Piyush Kumar",
@@ -50,7 +50,7 @@ function Home() {
                     thickness={3}
                     speed="1"
                 >
-                    About Me
+                 Next
                 </StarBorder>
 
 

@@ -1,10 +1,10 @@
-
+import React from 'react'
 import AnimatedContent from "@/components/AnimatedContent";
-import GlareHover from "@/components/GlareHover";
 import StarBorder from "@/components/StarBorder";
 import TrueFocus from "@/components/TrueFocus";
-import { Github, ExternalLink } from "lucide-react";
+
 import { Link } from "react-router-dom";
+import ProjectCard from './ProjectCard';
 
 const projects = [
     {
@@ -94,16 +94,16 @@ export default function Projects() {
                 {/* ================= LEFT SIDE ================= */}
                 <div className="w-full md:w-1/3 space-y-6  my-3">
                     <AnimatedContent animateOpacity>
-                        
-                          <TrueFocus
-                                sentence="MY PROJETS"
-                                manualMode={false}
-                                blurAmount={5}
-                                borderColor="white"
-                                animationDuration={0.5}
-                                pauseBetweenAnimations={1}
-                                className="text-3xl sm:text-4xl font-bold"
-                            />
+
+                        <TrueFocus
+                            sentence="MY PROJETS"
+                            manualMode={false}
+                            blurAmount={5}
+                            borderColor="white"
+                            animationDuration={0.5}
+                            pauseBetweenAnimations={1}
+                            className="text-3xl sm:text-4xl font-bold"
+                        />
 
                     </AnimatedContent>
 
@@ -114,12 +114,12 @@ export default function Projects() {
 
                     {/* Buttons */}
                     <div className="flex gap-4 flex-wrap">
-                        <StarBorder as={Link} to="/projects" color="white" thickness={2}>
-                            Projects
+                        <StarBorder as={Link} to="/about" color="white" thickness={2}>
+                            Previous
                         </StarBorder>
 
-                        <StarBorder as={Link} to="/contact" color="white" thickness={2}>
-                            Contact
+                        <StarBorder as={Link} to="/certificates" color="white" thickness={2}>
+                          Next
                         </StarBorder>
                     </div>
                 </div>
@@ -136,108 +136,19 @@ export default function Projects() {
           pr-1
         "
                     >
-                        {projects.map((p, i) => (
-                            <div key={i} className="mb-5 w-full">
-                                <GlareHover
-                                    glareColor="white"
-                                    glareOpacity={0.15}
-                                    glareSize={400}
-                                    borderRadius={16}
-                                >
-                                    <div
-                                        className="
-                  w-full
-                  min-h-[350px]
-                  md:h-[350px]
-                  rounded-xl
-                  bg-white/5
-                  border border-white/15
-                  backdrop-blur-md
-                  p-5 sm:p-6
-                  flex
-                  flex-col
-                  justify-between
-                "
-                                    >
-                                        {/* ===== TOP ===== */}
-                                        <div className="space-y-2">
-                                            <h3 className="text-lg font-semibold">
-                                                {p.title}
-                                            </h3>
+                        {projects.map((p, idx) => (
+                            <ProjectCard
+                                key={idx}
+                                title={p.title}
+                                description={p.description}
+                                type={p.type}
+                                tech={p.tech}
+                                role={p.role}
+                                live={p.live}
+                                github={p.github}
 
-                                            <span
-                                                className="
-                      inline-block
-                      text-xs
-                      px-3
-                      py-1
-                      rounded-full
-                      bg-white/10
-                      border border-white/20
-                    "
-                                            >
-                                                {p.type}
-                                            </span>
+                            />
 
-                                            <p className="text-sm text-white/80 leading-relaxed">
-                                                {p.description}
-                                            </p>
-                                        </div>
-
-                                        {/* ===== MIDDLE ===== */}
-                                        <div className="space-y-2 mt-3">
-                                            <div className="flex flex-wrap gap-2 text-xs">
-                                                {p.tech.map((t, idx) => (
-                                                    <span
-                                                        key={idx}
-                                                        className="
-                          px-3
-                          py-1
-                          rounded-full
-                          bg-white/10
-                          border border-white/20
-                        "
-                                                    >
-                                                        {t}
-                                                    </span>
-                                                ))}
-                                            </div>
-
-                                            <span className="text-xs text-white/70">
-                                                👤 Role:{" "}
-                                                <b className="text-white">{p.role}</b>
-                                            </span>
-                                        </div>
-
-                                        {/* ===== BOTTOM ===== */}
-                                        <div className="flex flex-wrap gap-3 mt-4">
-                                            <StarBorder
-                                                as="a"
-                                                href={p.live}
-                                                target="_blank"
-                                                color="white"
-                                                thickness={1.5}
-                                                className="flex items-center gap-2 text-sm px-3 py-1.5"
-                                            >
-                                                View Live
-                                                <ExternalLink size={14} />
-                                            </StarBorder>
-
-                                            <StarBorder
-                                                as="a"
-                                                href={p.github}
-                                                target="_blank"
-                                                color="white"
-                                                thickness={1.5}
-                                                className="flex items-center gap-2 text-sm px-3 py-1.5"
-                                            >
-                                                <Github size={14} />
-                                                GitHub
-                                            </StarBorder>
-                                        </div>
-                                    </div>
-                                </GlareHover>
-                            </div>
                         ))}
                     </div>
                 </div>

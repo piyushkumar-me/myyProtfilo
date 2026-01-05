@@ -125,5 +125,18 @@
 }
 
 body{
-  background: black;
+  background: black;/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+            .carousel-container {
+              width: 300px !important;
+            }
+          }
+
+/* Firefox */
+
+
 }
